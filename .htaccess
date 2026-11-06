@@ -1,0 +1,7 @@
+RewriteEngine On
+# bloqueia acesso direto a pastas internas e ao script SQL
+RewriteRule ^(config|paginas|templates)/|\.sql$ - [F]
+# URLs amigáveis: tudo que não for arquivo/pasta vai para o index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

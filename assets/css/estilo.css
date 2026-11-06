@@ -1,0 +1,61 @@
+:root{--tinta:#1b2a3a;--fundo:#f2f4f6;--papel:#fff;--linha:#dde2e8;--destaque:#0e7c7b;--alerta:#c2410c;--ok:#2f7d4f;--texto:#223;--suave:#667}
+*{box-sizing:border-box}
+body{margin:0;display:grid;grid-template-columns:230px 1fr;min-height:100vh;background:var(--fundo);color:var(--texto);font:16px/1.5 "Segoe UI",system-ui,sans-serif}
+.menu{background:var(--tinta);padding:1.25rem 0;display:flex;flex-direction:column}
+.menu a{color:#cfd8e1;text-decoration:none;padding:.7rem 1.5rem;border-left:4px solid transparent}
+.menu a:hover{background:rgba(255,255,255,.06)}
+.menu a.ativo{color:#fff;border-left-color:var(--destaque);background:rgba(255,255,255,.1)}
+.menu .marca{color:#fff;font-weight:700;font-size:1.15rem;padding-bottom:1.25rem;border-left:0}
+.conteudo{display:flex;flex-direction:column;min-width:0}
+main{flex:1;padding:2rem 2.5rem;max-width:1100px;width:100%}
+footer{padding:1rem 2.5rem;color:var(--suave);font-size:.85rem;border-top:1px solid var(--linha)}
+h1{margin:0 0 1.25rem;font-size:1.7rem}
+h2{font-size:1.1rem;margin:2rem 0 .75rem}
+a{color:var(--destaque)}
+:focus-visible{outline:3px solid var(--destaque);outline-offset:2px}
+.indicadores{display:grid;grid-template-columns:repeat(4,1fr);background:var(--papel);border:1px solid var(--linha);border-radius:6px}
+.indicadores div{padding:1.1rem 1.25rem;border-right:1px solid var(--linha);display:flex;flex-direction:column}
+.indicadores div:last-child{border-right:0}
+.indicadores strong{font-size:2.2rem;line-height:1.1}
+.indicadores span{color:var(--suave);font-size:.9rem}
+.indicadores .alerta strong{color:var(--alerta)}
+.colunas{display:grid;grid-template-columns:3fr 2fr;gap:2.5rem}
+.barra{display:grid;grid-template-columns:150px 1fr 2rem;gap:.75rem;align-items:center;margin:.45rem 0}
+.trilho{background:var(--linha);height:12px;border-radius:6px;overflow:hidden}
+.trilho i{display:block;height:100%;background:var(--destaque)}
+.barra b{text-align:right}
+.lista{list-style:none;padding:0;margin:0}
+.lista li{padding:.5rem 0;border-bottom:1px solid var(--linha)}
+.lista small,td small{display:block;color:var(--suave)}
+table{width:100%;border-collapse:collapse;background:var(--papel);border:1px solid var(--linha);border-radius:6px;overflow:hidden}
+th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--linha);vertical-align:middle}
+th{background:#eaeef2;font-size:.9rem}
+.barra-topo{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.busca{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem}
+input,select{padding:.55rem .7rem;border:1px solid #b9c2cc;border-radius:5px;font:inherit;background:#fff}
+.busca input{min-width:280px}
+.botao{background:var(--destaque);color:#fff;border:0;padding:.6rem 1.1rem;border-radius:5px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+.botao:hover{background:#0a6463}
+.link{background:none;border:0;color:var(--destaque);font:inherit;cursor:pointer;padding:0;text-decoration:underline}
+.link.perigo{color:var(--alerta)}
+.acoes{display:flex;gap:.9rem;align-items:center}
+.acoes form{margin:0}
+td.acoes{white-space:nowrap}
+.formulario{display:grid;gap:1rem;max-width:520px}
+.formulario label{display:flex;flex-direction:column;gap:.3rem;font-weight:600}
+.selo{padding:.15rem .6rem;border-radius:99px;font-size:.82rem;font-weight:600;background:#e6e9ed}
+.selo.ativo,.selo.aprovada{background:#d9efe2;color:var(--ok)}
+.selo.afastado,.selo.pendente{background:#fde7d6;color:var(--alerta)}
+.selo.desligado,.selo.recusada{background:#e6e9ed;color:var(--suave)}
+.erro{background:#fde7d6;color:#7a2a07;padding:.7rem 1rem;border-radius:5px}
+.vazio{color:var(--suave)}
+@media(max-width:800px){
+  body{grid-template-columns:1fr}
+  .menu{flex-direction:row;flex-wrap:wrap;padding:.5rem}
+  .menu a{padding:.5rem .8rem;border-left:0}
+  .menu .marca{width:100%;padding-bottom:.5rem}
+  main{padding:1.25rem}
+  .indicadores{grid-template-columns:1fr 1fr}
+  .colunas{grid-template-columns:1fr}
+  table{display:block;overflow-x:auto}
+}
